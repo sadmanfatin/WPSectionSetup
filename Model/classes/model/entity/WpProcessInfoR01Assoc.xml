@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WpProcessInfoR01Assoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="WpSectionInfoEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entity.WpSectionInfoEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="WpSectionInfoEO"/>
+      <Attr Name="_foreignKey"
+        Value="model.entity.WpSectionInfoEO.WpSectionInfoPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.WpSectionInfoEO.SectionId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="WpProcessInfoEO"
+    Cardinality="-1"
+    Owner="model.entity.WpProcessInfoEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="WpProcessInfoEO"/>
+      <Attr Name="_foreignKey"
+        Value="model.entity.WpProcessInfoEO.WpProcessInfoR01"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.WpProcessInfoEO.SectionId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

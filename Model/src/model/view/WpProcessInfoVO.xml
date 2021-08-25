@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WpProcessInfoVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="WpProcessInfoEO.PROCESS_ID, 
+       WpProcessInfoEO.PROCESS_NAME, 
+       WpProcessInfoEO.SECTION_ID, 
+       WpProcessInfoEO.CREATED_BY, 
+       WpProcessInfoEO.CREATION_DATE, 
+       WpProcessInfoEO.LAST_UPDATED_BY, 
+       WpProcessInfoEO.LAST_UPDATED_DATE"
+  FromList="WP_PROCESS_INFO WpProcessInfoEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="model.view.WpProcessInfoVORowImpl"
+  ComponentClass="model.view.WpProcessInfoVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="WpProcessInfoEO"
+    Entity="model.entity.WpProcessInfoEO"/>
+  <ViewAttribute
+    Name="ProcessId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProcessId"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="PROCESS_ID"/>
+  <ViewAttribute
+    Name="ProcessName"
+    PrecisionRule="true"
+    EntityAttrName="ProcessName"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="PROCESS_NAME"/>
+  <ViewAttribute
+    Name="SectionId"
+    PrecisionRule="true"
+    EntityAttrName="SectionId"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="SECTION_ID"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="LAST_UPDATED_DATE"/>
+</ViewObject>

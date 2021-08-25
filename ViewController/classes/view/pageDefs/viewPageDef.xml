@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="viewPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WpSectionInfoVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="WpSectionInfoVO1Iterator"/>
+    <searchRegion Binds="WpSectionInfoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="WpSectionInfoVO1Query"/>
+    <iterator Binds="WpProcessInfoVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="WpProcessInfoVO1Iterator"/>
+    <searchRegion Binds="WpProcessInfoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="WpProcessInfoVO1Query"/>
+    <invokeAction id="setsessionValue" Binds="setSessionValues"
+                  Refresh="always"/>
+    <iterator Binds="SectionInfoVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SectionInfoVO1Iterator"/>
+    <searchRegion Binds="SectionInfoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SectionInfoVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WpSectionInfoVO1Iterator" id="WpSectionInfoVO1">
+      <nodeDefinition DefName="model.view.WpSectionInfoVO"
+                      Name="WpSectionInfoVO10">
+        <AttrNames>
+          <Item Value="SectionId"/>
+          <Item Value="SectionName"/>
+          <Item Value="OrgId"/>
+          <Item Value="CostCenter"/>
+          <Item Value="Serial"/>
+          <Item Value="OrgName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="WpProcessInfoVO1Iterator" id="WpProcessInfoVO1">
+      <nodeDefinition DefName="model.view.WpProcessInfoVO"
+                      Name="WpProcessInfoVO10">
+        <AttrNames>
+          <Item Value="ProcessId"/>
+          <Item Value="ProcessName"/>
+          <Item Value="SectionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="WpSectionInfoVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="WpSectionInfoVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action IterBinding="WpProcessInfoVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="WpProcessInfoVO1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="setSessionValues"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respApplId" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="SectionInfoVO1Iterator" id="SectionInfoVO1">
+      <nodeDefinition DefName="model.view.SectionInfoVO" Name="SectionInfoVO10">
+        <AttrNames>
+          <Item Value="CheckBox" Binds="CheckBox"/>
+          <Item Value="OrgName"/>
+          <Item Value="SectionId"/>
+          <Item Value="SectionName"/>
+          <Item Value="Sl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="SectionInfoVO1Iterator" id="CheckBox"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="CheckBox"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="y"/>
+        <Item Value="n"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>
