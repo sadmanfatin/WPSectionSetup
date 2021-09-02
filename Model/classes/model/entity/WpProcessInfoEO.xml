@@ -18,16 +18,14 @@
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Attribute
-    Name="ProcessId"
-    IsNotNull="true"
-    ColumnName="PROCESS_ID"
+    Name="UnitProcessId"
+    ColumnName="UNIT_PROCESS_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="WP_PROCESS_INFO"
-    PrimaryKey="true">
+    TableName="WP_PROCESS_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -43,14 +41,14 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="SectionId"
-    ColumnName="SECTION_ID"
+    Name="WpSectionId"
+    ColumnName="WP_SECTION_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="WP_PROCESS_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -61,7 +59,7 @@
     ColumnType="NUMBER"
     TableName="WP_PROCESS_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -83,7 +81,7 @@
     ColumnType="NUMBER"
     TableName="WP_PROCESS_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -95,6 +93,30 @@
     TableName="WP_PROCESS_INFO">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WpProcessId"
+    IsNotNull="true"
+    ColumnName="WP_PROCESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="WP_PROCESS_INFO"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UnitSectionId"
+    ColumnName="UNIT_SECTION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="WP_PROCESS_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute
@@ -111,7 +133,7 @@
       <Attr Name="_DBObjectName" Value="WP_PROCESS_INFO_PK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.WpProcessInfoEO.ProcessId"/>
+      <Item Value="model.entity.WpProcessInfoEO.WpProcessId"/>
     </AttrArray>
   </Key>
   <Key
@@ -122,7 +144,7 @@
       <Attr Name="_DBObjectName" Value="WP_PROCESS_INFO_R01"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.WpProcessInfoEO.SectionId"/>
+      <Item Value="model.entity.WpProcessInfoEO.WpSectionId"/>
     </AttrArray>
   </Key>
 </Entity>

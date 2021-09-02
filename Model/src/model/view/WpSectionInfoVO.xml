@@ -14,36 +14,38 @@
   ComponentClass="model.view.WpSectionInfoVOImpl">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
-    <Attr Name="_isExpertMode" Value="true"/>
     <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
-  <ViewAccessor
-    Name="OrgVO1"
-    ViewObjectName="model.view.OrgVO"
-    RowLevelBinds="true"/>
+  <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.orgId]]></TransientExpression>
+  </Variable>
   <SQLQuery>
-    <![CDATA[SELECT WpSectionInfoEO.SECTION_ID, 
+    <![CDATA[SELECT WpSectionInfoEO.UNIT_SECTION_ID, 
        WpSectionInfoEO.SECTION_NAME, 
        WpSectionInfoEO.ORG_ID, 
        WpSectionInfoEO.COST_CENTER, 
-       WpSectionInfoEO.SERIAL,
+       WpSectionInfoEO.SERIAL, 
        WpSectionInfoEO.CREATED_BY, 
        WpSectionInfoEO.CREATION_DATE, 
        WpSectionInfoEO.LAST_UPDATED_BY, 
-       WpSectionInfoEO.LAST_UPDATED_DATE,
-       apps.org_id_to_org_name(WpSectionInfoEO.ORG_ID) org_name
-FROM WP_SECTION_INFO WpSectionInfoEO]]>
+       WpSectionInfoEO.LAST_UPDATED_DATE, 
+       WpSectionInfoEO.WP_SECTION_ID
+FROM WP_SECTION_INFO WpSectionInfoEO
+WHERE WpSectionInfoEO.ORG_ID = :p_org_id]]>
   </SQLQuery>
   <EntityUsage
     Name="WpSectionInfoEO"
     Entity="model.entity.WpSectionInfoEO"/>
   <ViewAttribute
-    Name="SectionId"
-    IsNotNull="true"
+    Name="UnitSectionId"
     PrecisionRule="true"
-    EntityAttrName="SectionId"
+    EntityAttrName="UnitSectionId"
     EntityUsage="WpSectionInfoEO"
-    AliasName="SECTION_ID"/>
+    AliasName="UNIT_SECTION_ID"/>
   <ViewAttribute
     Name="SectionName"
     PrecisionRule="true"
@@ -94,19 +96,12 @@ FROM WP_SECTION_INFO WpSectionInfoEO]]>
     EntityUsage="WpSectionInfoEO"
     AliasName="LAST_UPDATED_DATE"/>
   <ViewAttribute
-    Name="OrgName"
-    IsPersistent="false"
+    Name="WpSectionId"
+    IsNotNull="true"
     PrecisionRule="true"
-    Precision="4000"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="ORG_NAME"
-    Expression="ORG_NAME"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="4000"/>
-    </DesignTime>
-  </ViewAttribute>
+    EntityAttrName="WpSectionId"
+    EntityUsage="WpSectionInfoEO"
+    AliasName="WP_SECTION_ID"/>
   <ViewLinkAccessor
     Name="WpProcessInfoVO"
     ViewLink="model.view.WpProcessInfoR01Link"

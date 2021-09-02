@@ -6,13 +6,15 @@
   Name="WpProcessInfoVO"
   Version="11.1.1.62.29"
   InheritPersonalization="true"
-  SelectList="WpProcessInfoEO.PROCESS_ID, 
+  SelectList="WpProcessInfoEO.UNIT_PROCESS_ID, 
        WpProcessInfoEO.PROCESS_NAME, 
-       WpProcessInfoEO.SECTION_ID, 
+       WpProcessInfoEO.WP_SECTION_ID, 
        WpProcessInfoEO.CREATED_BY, 
        WpProcessInfoEO.CREATION_DATE, 
        WpProcessInfoEO.LAST_UPDATED_BY, 
-       WpProcessInfoEO.LAST_UPDATED_DATE"
+       WpProcessInfoEO.LAST_UPDATED_DATE, 
+       WpProcessInfoEO.WP_PROCESS_ID, 
+       WpProcessInfoEO.UNIT_SECTION_ID"
   FromList="WP_PROCESS_INFO WpProcessInfoEO"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -28,12 +30,11 @@
     Name="WpProcessInfoEO"
     Entity="model.entity.WpProcessInfoEO"/>
   <ViewAttribute
-    Name="ProcessId"
-    IsNotNull="true"
+    Name="UnitProcessId"
     PrecisionRule="true"
-    EntityAttrName="ProcessId"
+    EntityAttrName="UnitProcessId"
     EntityUsage="WpProcessInfoEO"
-    AliasName="PROCESS_ID"/>
+    AliasName="UNIT_PROCESS_ID"/>
   <ViewAttribute
     Name="ProcessName"
     PrecisionRule="true"
@@ -41,11 +42,11 @@
     EntityUsage="WpProcessInfoEO"
     AliasName="PROCESS_NAME"/>
   <ViewAttribute
-    Name="SectionId"
+    Name="WpSectionId"
     PrecisionRule="true"
-    EntityAttrName="SectionId"
+    EntityAttrName="WpSectionId"
     EntityUsage="WpProcessInfoEO"
-    AliasName="SECTION_ID"/>
+    AliasName="WP_SECTION_ID"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -70,4 +71,17 @@
     EntityAttrName="LastUpdatedDate"
     EntityUsage="WpProcessInfoEO"
     AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="WpProcessId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="WpProcessId"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="WP_PROCESS_ID"/>
+  <ViewAttribute
+    Name="UnitSectionId"
+    PrecisionRule="true"
+    EntityAttrName="UnitSectionId"
+    EntityUsage="WpProcessInfoEO"
+    AliasName="UNIT_SECTION_ID"/>
 </ViewObject>

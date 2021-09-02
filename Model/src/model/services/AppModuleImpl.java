@@ -9,6 +9,8 @@ import model.services.common.AppModule;
 
 import model.view.ProcessInfoVOImpl;
 import model.view.SectionInfoVOImpl;
+
+
 import model.view.WpProcessInfoVOImpl;
 import model.view.WpSectionInfoVOImpl;
 
@@ -61,32 +63,6 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
          
       }
 
-    
-    
-
-    /**
-     * Container's getter for WpSectionInfoVO1.
-     * @return WpSectionInfoVO1
-     */
-    public ViewObjectImpl getWpSectionInfoVO1() {
-        return (ViewObjectImpl)findViewObject("WpSectionInfoVO1");
-    }
-
-    /**
-     * Container's getter for WpProcessInfoVO1.
-     * @return WpProcessInfoVO1
-     */
-    public ViewObjectImpl getWpProcessInfoVO1() {
-        return (ViewObjectImpl)findViewObject("WpProcessInfoVO1");
-    }
-
-    /**
-     * Container's getter for WpProcessInfoR01Link1.
-     * @return WpProcessInfoR01Link1
-     */
-    public ViewLinkImpl getWpProcessInfoR01Link1() {
-        return (ViewLinkImpl)findViewLink("WpProcessInfoR01Link1");
-    }
 
     /**
      * Container's getter for SectionInfoVO1.
@@ -110,5 +86,29 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewObjectImpl getOrgVO1() {
         return (ViewObjectImpl)findViewObject("OrgVO1");
+    }
+
+    /**
+     * Container's getter for WpSectionInfoVO1.
+     * @return WpSectionInfoVO1
+     */
+    public WpSectionInfoVOImpl getWpSectionInfoVO1() {
+        return (WpSectionInfoVOImpl)findViewObject("WpSectionInfoVO1");
+    }
+
+    /**
+     * Container's getter for WpProcessInfoVO1.
+     * @return WpProcessInfoVO1
+     */
+    public WpProcessInfoVOImpl getWpProcessInfoVO1() {
+        return (WpProcessInfoVOImpl)findViewObject("WpProcessInfoVO1");
+    }
+
+    /**
+     * Container's getter for WpProcessInfoR01Link1.
+     * @return WpProcessInfoR01Link1
+     */
+    public ViewLinkImpl getWpProcessInfoR01Link1() {
+        return (ViewLinkImpl)findViewLink("WpProcessInfoR01Link1");
     }
 }

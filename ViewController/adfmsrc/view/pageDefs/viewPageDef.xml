@@ -6,9 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="WpSectionInfoVO1" RangeSize="25"
               DataControl="AppModuleDataControl" id="WpSectionInfoVO1Iterator"/>
-    <searchRegion Binds="WpSectionInfoVO1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="WpSectionInfoVO1Query"/>
     <iterator Binds="WpProcessInfoVO1" RangeSize="25"
               DataControl="AppModuleDataControl" id="WpProcessInfoVO1Iterator"/>
     <searchRegion Binds="WpProcessInfoVO1Iterator" Criteria=""
@@ -21,35 +18,24 @@
     <searchRegion Binds="SectionInfoVO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="SectionInfoVO1Query"/>
+    <iterator Binds="OrgVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="OrgVO1Iterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="WpSectionInfoVO1Iterator" id="WpSectionInfoVO1">
-      <nodeDefinition DefName="model.view.WpSectionInfoVO"
-                      Name="WpSectionInfoVO10">
-        <AttrNames>
-          <Item Value="SectionId"/>
-          <Item Value="SectionName"/>
-          <Item Value="OrgId"/>
-          <Item Value="CostCenter"/>
-          <Item Value="Serial"/>
-          <Item Value="OrgName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="WpProcessInfoVO1Iterator" id="WpProcessInfoVO1">
       <nodeDefinition DefName="model.view.WpProcessInfoVO"
                       Name="WpProcessInfoVO10">
         <AttrNames>
-          <Item Value="ProcessId"/>
           <Item Value="ProcessName"/>
-          <Item Value="SectionId"/>
+          <Item Value="WpSectionId"/>
+          <Item Value="WpProcessId"/>
+          <Item Value="UnitProcessId"/>
+          <Item Value="UnitSectionId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="WpSectionInfoVO1Iterator" id="CreateInsert"
             RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="WpSectionInfoVO1Iterator" id="Delete"
-            RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="AppModuleDataControl"/>
     <action IterBinding="WpProcessInfoVO1Iterator" id="CreateInsert1"
@@ -91,5 +77,29 @@
         <Item Value="n"/>
       </ValueList>
     </button>
+    <attributeValues IterBinding="OrgVO1Iterator" id="OrgName">
+      <AttrNames>
+        <Item Value="OrgName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="WpSectionInfoVO1Iterator" id="WpSectionInfoVO1">
+      <nodeDefinition DefName="model.view.WpSectionInfoVO"
+                      Name="WpSectionInfoVO10">
+        <AttrNames>
+          <Item Value="UnitSectionId"/>
+          <Item Value="SectionName"/>
+          <Item Value="OrgId"/>
+          <Item Value="CostCenter"/>
+          <Item Value="Serial"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreationDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="LastUpdatedDate"/>
+          <Item Value="WpSectionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="WpSectionInfoVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

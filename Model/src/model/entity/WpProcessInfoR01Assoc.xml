@@ -13,16 +13,15 @@
     Name="WpSectionInfoEO"
     Cardinality="1"
     Source="true"
-    Owner="model.entity.WpSectionInfoEO">
+    Owner="model.entity.WpSectionInfoEO"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="WpSectionInfoEO"/>
-      <Attr Name="_foreignKey"
-        Value="model.entity.WpSectionInfoEO.WpSectionInfoPk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.WpSectionInfoEO.SectionId"/>
+      <Item Value="model.entity.WpSectionInfoEO.WpSectionId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,12 +31,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="WpProcessInfoEO"/>
-      <Attr Name="_foreignKey"
-        Value="model.entity.WpProcessInfoEO.WpProcessInfoR01"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.WpProcessInfoEO.SectionId"/>
+      <Item Value="model.entity.WpProcessInfoEO.WpSectionId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

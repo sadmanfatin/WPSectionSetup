@@ -54,6 +54,7 @@ public class ManagedBean {
             populateSection();
             
             AdfFacesContext.getCurrentInstance().addPartialTarget(sectionTable);
+            AdfFacesContext.getCurrentInstance().addPartialTarget(processTable);
             
         } else if (dialogEvent.getOutcome().name().equals("cancel")) {
             ;
@@ -87,14 +88,14 @@ public class ManagedBean {
                     wpSectionInfoRow = (WpSectionInfoVORowImpl)wpSectionInfoVo.createRow();
                 
                     wpSectionInfoRow.setOrgId(   new Number (sectionInfoRow.getOrgId()));
-                    wpSectionInfoRow.setOrgName(sectionInfoRow.getOrgName());
-                    wpSectionInfoRow.setSectionId(sectionInfoRow.getSectionId());
+                 //   wpSectionInfoRow.setOrgName(sectionInfoRow.getOrgName());
+                    wpSectionInfoRow.setUnitSectionId(sectionInfoRow.getSectionId());
                     wpSectionInfoRow.setSectionName(sectionInfoRow.getSectionName());
                     wpSectionInfoRow.setSerial(sectionInfoRow.getSl());
                 
                     wpSectionInfoVo.insertRow(wpSectionInfoRow);
                 
-                   populateProcesses(sectionInfoRow.getSectionId(),   new Number(wpSectionInfoRow.getOrgId())   );
+                   populateProcesses(sectionInfoRow.getSectionId(),   new Number(sectionInfoRow.getOrgId())   );
                 }
                     
             } catch (Exception e) {
@@ -108,9 +109,9 @@ public class ManagedBean {
     }
 
 
-    private void populateProcesses(Number sectioId, Number orgId) {
+    private void populateProcesses(Number unitSectionId, Number orgId) {
         ProcessInfoVOImpl processesVo = (ProcessInfoVOImpl)appM.getProcessInfoVO1();
-        processesVo.setp_section_id(sectioId.toString());
+        processesVo.setp_section_id(unitSectionId.toString());
         processesVo.setp_org_id(orgId.toString());
         processesVo.executeQuery();
         Row  processesVoRows[] = processesVo.getAllRowsInRange();
@@ -126,8 +127,9 @@ public class ManagedBean {
             
             wpProcessInfoVoRow = (WpProcessInfoVORowImpl)wpProcessInfoVo.createRow();
             
-            wpProcessInfoVoRow.setSectionId(processVoRow.getSectionId());
-            wpProcessInfoVoRow.setProcessId(processVoRow.getProcessId());
+           
+            wpProcessInfoVoRow.setUnitProcessId(processVoRow.getProcessId());
+            wpProcessInfoVoRow.setUnitSectionId(unitSectionId);
             wpProcessInfoVoRow.setProcessName(processVoRow.getProcessName());  
             wpProcessInfoVo.insertRow(wpProcessInfoVoRow);
           

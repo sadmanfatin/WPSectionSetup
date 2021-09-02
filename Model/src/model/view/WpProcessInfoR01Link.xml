@@ -20,7 +20,7 @@
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.view.WpSectionInfoVO.SectionId"/>
+      <Item Value="model.view.WpSectionInfoVO.WpSectionId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
@@ -32,7 +32,7 @@
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.view.WpProcessInfoVO.SectionId"/>
+      <Item Value="model.view.WpProcessInfoVO.WpSectionId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

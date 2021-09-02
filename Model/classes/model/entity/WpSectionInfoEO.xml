@@ -18,16 +18,14 @@
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Attribute
-    Name="SectionId"
-    IsNotNull="true"
-    ColumnName="SECTION_ID"
+    Name="UnitSectionId"
+    ColumnName="UNIT_SECTION_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="WP_SECTION_INFO"
-    PrimaryKey="true">
+    TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -51,7 +49,7 @@
     ColumnType="NUMBER"
     TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -63,7 +61,7 @@
     ColumnType="VARCHAR2"
     TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="1"/>
+      <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -74,7 +72,7 @@
     ColumnType="NUMBER"
     TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -85,7 +83,7 @@
     ColumnType="NUMBER"
     TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -107,7 +105,7 @@
     ColumnType="NUMBER"
     TableName="WP_SECTION_INFO">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -119,6 +117,19 @@
     TableName="WP_SECTION_INFO">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WpSectionId"
+    IsNotNull="true"
+    ColumnName="WP_SECTION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="WP_SECTION_INFO"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <AccessorAttribute
@@ -146,7 +157,7 @@
       <Attr Name="_DBObjectName" Value="WP_SECTION_INFO_PK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.entity.WpSectionInfoEO.SectionId"/>
+      <Item Value="model.entity.WpSectionInfoEO.WpSectionId"/>
     </AttrArray>
   </Key>
 </Entity>
