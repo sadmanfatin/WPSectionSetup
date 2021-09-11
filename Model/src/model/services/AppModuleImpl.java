@@ -32,11 +32,11 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
     public void setSessionValues(String orgId, String userId, String respId,
                                  String respApplId) {  
         
-        System.out.println("====================  set session values    ================================");
+  //      System.out.println("====================  set session values    ================================");
         
         
-       orgId = "344";
-       userId = "5219";
+//       orgId = "344";
+//       userId = "5219";
 //       
 //       System.out.println(" orgId "+ orgId  + "  data type  "+ orgId.getClass().getName());
 //       

@@ -23,7 +23,8 @@
           <f:facet name="center">
             <!-- id="af_one_column_header_scroll"   -->
             <af:panelGroupLayout layout="scroll" id="pgl1">
-              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+              <af:panelCollection id="pc1" styleClass="AFStretchWidth"
+                                  inlineStyle="height:300.0px;">
                 <f:facet name="toolbar">
                   <af:toolbar id="t1">
                     <af:commandButton text="Populate" id="cb1">
@@ -201,7 +202,8 @@
                   </af:column>
                 </af:table>
               </af:panelCollection>
-              <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+              <af:panelCollection id="pc2" styleClass="AFStretchWidth"
+                                  inlineStyle="height:350.0px;">
                 <f:facet name="toolbar">
                   <af:toolbar id="t2">
                     <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
