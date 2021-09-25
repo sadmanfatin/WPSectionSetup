@@ -27,7 +27,7 @@
                 <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
                 <af:panelCollection id="pc1" styleClass="AFStretchWidth"
-                                    inlineStyle="height:300.0px; width:600px;">
+                                    inlineStyle="height:300px; width:791px;">
                   <f:facet name="toolbar">
                     <af:toolbar id="t1">
                       <af:commandButton text="Populate " id="cb1">
@@ -100,7 +100,7 @@
                     </af:column>
                     <af:column sortProperty="OrgId" sortable="true"
                                headerText="#{bindings.WpSectionInfoVO1.hints.OrgId.label}"
-                               id="c1" align="center">
+                               id="c1" align="center" visible="false">
                       <af:inputText value="#{row.bindings.OrgId.inputValue}"
                                     label="#{bindings.WpSectionInfoVO1.hints.OrgId.label}"
                                     required="#{bindings.WpSectionInfoVO1.hints.OrgId.mandatory}"
@@ -124,6 +124,18 @@
                                     shortDesc="#{bindings.WpSectionInfoVO1.hints.CostCenter.tooltip}"
                                     id="it10">
                         <f:validator binding="#{row.bindings.CostCenter.validator}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.WpSectionInfoVO1.hints.OrgName.label}"
+                               id="c23" width="160" align="center">
+                      <af:inputText value="#{row.bindings.OrgName.inputValue}"
+                                    label="#{bindings.WpSectionInfoVO1.hints.OrgName.label}"
+                                    required="#{bindings.WpSectionInfoVO1.hints.OrgName.mandatory}"
+                                    columns="#{bindings.WpSectionInfoVO1.hints.OrgName.displayWidth}"
+                                    maximumLength="#{bindings.WpSectionInfoVO1.hints.OrgName.precision}"
+                                    shortDesc="#{bindings.WpSectionInfoVO1.hints.OrgName.tooltip}"
+                                    id="it14" readOnly="true">
+                        <f:validator binding="#{row.bindings.OrgName.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="Serial" sortable="true"
@@ -195,6 +207,19 @@
                         <f:validator binding="#{row.bindings.LastUpdatedDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.WpSectionInfoVO1.hints.LastUpdatedDate.format}"/>
                       </af:inputDate>
+                    </af:column>
+                    <af:column headerText="Section Type"
+                               id="c22" align="center" sortable="true"
+                               filterable="true">
+                      <af:inputText value="#{row.bindings.SectionType.inputValue}"
+                                    label="#{bindings.WpSectionInfoVO1.hints.SectionType.label}"
+                                    required="#{bindings.WpSectionInfoVO1.hints.SectionType.mandatory}"
+                                    columns="#{bindings.WpSectionInfoVO1.hints.SectionType.displayWidth}"
+                                    maximumLength="#{bindings.WpSectionInfoVO1.hints.SectionType.precision}"
+                                    shortDesc="#{bindings.WpSectionInfoVO1.hints.SectionType.tooltip}"
+                                    id="it13" readOnly="true">
+                        <f:validator binding="#{row.bindings.SectionType.validator}"/>
+                      </af:inputText>
                     </af:column>
                     <af:column id="c21" align="center" sortable="true"
                                filterable="true">

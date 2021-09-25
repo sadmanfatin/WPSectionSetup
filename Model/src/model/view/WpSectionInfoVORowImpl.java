@@ -48,6 +48,16 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        OrgName {
+            public Object get(WpSectionInfoVORowImpl obj) {
+                return obj.getOrgName();
+            }
+
+            public void put(WpSectionInfoVORowImpl obj, Object value) {
+                obj.setOrgName((String)value);
+            }
+        }
+        ,
         CostCenter {
             public Object get(WpSectionInfoVORowImpl obj) {
                 return obj.getCostCenter();
@@ -118,6 +128,16 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        SectionType {
+            public Object get(WpSectionInfoVORowImpl obj) {
+                return obj.getSectionType();
+            }
+
+            public void put(WpSectionInfoVORowImpl obj, Object value) {
+                obj.setSectionType((String)value);
+            }
+        }
+        ,
         WpProcessInfoVO {
             public Object get(WpSectionInfoVORowImpl obj) {
                 return obj.getWpProcessInfoVO();
@@ -155,9 +175,11 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
         }
     }
 
+
     public static final int UNITSECTIONID = AttributesEnum.UnitSectionId.index();
     public static final int SECTIONNAME = AttributesEnum.SectionName.index();
     public static final int ORGID = AttributesEnum.OrgId.index();
+    public static final int ORGNAME = AttributesEnum.OrgName.index();
     public static final int COSTCENTER = AttributesEnum.CostCenter.index();
     public static final int SERIAL = AttributesEnum.Serial.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
@@ -165,6 +187,7 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int LASTUPDATEDDATE = AttributesEnum.LastUpdatedDate.index();
     public static final int WPSECTIONID = AttributesEnum.WpSectionId.index();
+    public static final int SECTIONTYPE = AttributesEnum.SectionType.index();
     public static final int WPPROCESSINFOVO = AttributesEnum.WpProcessInfoVO.index();
 
     /**
@@ -227,6 +250,22 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
      */
     public void setOrgId(Number value) {
         setAttributeInternal(ORGID, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute OrgName.
+     * @return the OrgName
+     */
+    public String getOrgName() {
+        return (String) getAttributeInternal(ORGNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute OrgName.
+     * @param value value to set the  OrgName
+     */
+    public void setOrgName(String value) {
+        setAttributeInternal(ORGNAME, value);
     }
 
     /**
@@ -339,6 +378,22 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
      */
     public void setWpSectionId(Number value) {
         setAttributeInternal(WPSECTIONID, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute SectionType.
+     * @return the SectionType
+     */
+    public String getSectionType() {
+        return (String) getAttributeInternal(SECTIONTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute SectionType.
+     * @param value value to set the  SectionType
+     */
+    public void setSectionType(String value) {
+        setAttributeInternal(SECTIONTYPE, value);
     }
 
     /**

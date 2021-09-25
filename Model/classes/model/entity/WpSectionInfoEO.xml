@@ -132,6 +132,18 @@
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="SectionType"
+    Precision="30"
+    ColumnName="SECTION_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="WP_SECTION_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="WpProcessInfoEO"
     Association="model.entity.WpProcessInfoR01Assoc"

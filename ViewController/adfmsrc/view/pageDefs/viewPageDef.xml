@@ -96,6 +96,8 @@
           <Item Value="LastUpdatedBy"/>
           <Item Value="LastUpdatedDate"/>
           <Item Value="WpSectionId"/>
+          <Item Value="SectionType"/>
+          <Item Value="OrgName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

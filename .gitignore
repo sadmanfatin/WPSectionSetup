@@ -1,0 +1,4 @@
+
+*.class
+*.cdi_javac
+*.jdb

@@ -26,14 +26,16 @@
   <SQLQuery>
     <![CDATA[SELECT WpSectionInfoEO.UNIT_SECTION_ID, 
        WpSectionInfoEO.SECTION_NAME, 
-       WpSectionInfoEO.ORG_ID, 
+       WpSectionInfoEO.ORG_ID,
+       org_id_to_org_name( WpSectionInfoEO.ORG_ID )   org_name,
        WpSectionInfoEO.COST_CENTER, 
        WpSectionInfoEO.SERIAL, 
        WpSectionInfoEO.CREATED_BY, 
        WpSectionInfoEO.CREATION_DATE, 
        WpSectionInfoEO.LAST_UPDATED_BY, 
        WpSectionInfoEO.LAST_UPDATED_DATE, 
-       WpSectionInfoEO.WP_SECTION_ID
+       WpSectionInfoEO.WP_SECTION_ID,
+      WpSectionInfoEO.SECTION_TYPE
 FROM WP_SECTION_INFO WpSectionInfoEO
 WHERE WpSectionInfoEO.ORG_ID = :p_org_id]]>
   </SQLQuery>
@@ -59,6 +61,21 @@ WHERE WpSectionInfoEO.ORG_ID = :p_org_id]]>
     EntityAttrName="OrgId"
     EntityUsage="WpSectionInfoEO"
     AliasName="ORG_ID"/>
+  <ViewAttribute
+    Name="OrgName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ORG_NAME"
+    Expression="ORG_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="CostCenter"
     PrecisionRule="true"
@@ -102,6 +119,21 @@ WHERE WpSectionInfoEO.ORG_ID = :p_org_id]]>
     EntityAttrName="WpSectionId"
     EntityUsage="WpSectionInfoEO"
     AliasName="WP_SECTION_ID"/>
+  <ViewAttribute
+    Name="SectionType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SECTION_TYPE"
+    Expression="SECTION_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="WpProcessInfoVO"
     ViewLink="model.view.WpProcessInfoR01Link"

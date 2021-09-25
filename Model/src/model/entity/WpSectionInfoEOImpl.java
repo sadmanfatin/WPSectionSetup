@@ -128,6 +128,16 @@ public class WpSectionInfoEOImpl extends EntityImpl {
             }
         }
         ,
+        SectionType {
+            public Object get(WpSectionInfoEOImpl obj) {
+                return obj.getSectionType();
+            }
+
+            public void put(WpSectionInfoEOImpl obj, Object value) {
+                obj.setSectionType((String)value);
+            }
+        }
+        ,
         WpProcessInfoEO {
             public Object get(WpSectionInfoEOImpl obj) {
                 return obj.getWpProcessInfoEO();
@@ -164,6 +174,7 @@ public class WpSectionInfoEOImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int UNITSECTIONID = AttributesEnum.UnitSectionId.index();
     public static final int SECTIONNAME = AttributesEnum.SectionName.index();
     public static final int ORGID = AttributesEnum.OrgId.index();
@@ -174,6 +185,7 @@ public class WpSectionInfoEOImpl extends EntityImpl {
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int LASTUPDATEDDATE = AttributesEnum.LastUpdatedDate.index();
     public static final int WPSECTIONID = AttributesEnum.WpSectionId.index();
+    public static final int SECTIONTYPE = AttributesEnum.SectionType.index();
     public static final int WPPROCESSINFOEO = AttributesEnum.WpProcessInfoEO.index();
 
     /**
@@ -181,8 +193,17 @@ public class WpSectionInfoEOImpl extends EntityImpl {
      */
     public WpSectionInfoEOImpl() {
     }
-    
-    
+
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        if (mDefinitionObject == null) {
+            mDefinitionObject = EntityDefImpl.findDefObject("model.entity.WpSectionInfoEO");
+        }
+        return mDefinitionObject;
+    }
 
     private Number getNewUnitSectionId() {
         String orgId = this.getOrgId().toString();
@@ -377,6 +398,22 @@ public class WpSectionInfoEOImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for SectionType, using the alias name SectionType.
+     * @return the SectionType
+     */
+    public String getSectionType() {
+        return (String)getAttributeInternal(SECTIONTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SectionType.
+     * @param value value to set the SectionType
+     */
+    public void setSectionType(String value) {
+        setAttributeInternal(SECTIONTYPE, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -416,6 +453,7 @@ public class WpSectionInfoEOImpl extends EntityImpl {
         return (RowIterator)getAttributeInternal(WPPROCESSINFOEO);
     }
 
+
     /**
      * @param wpSectionId key constituent
 
@@ -423,16 +461,6 @@ public class WpSectionInfoEOImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number wpSectionId) {
         return new Key(new Object[]{wpSectionId});
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        if (mDefinitionObject == null) {
-            mDefinitionObject = EntityDefImpl.findDefObject("model.entity.WpSectionInfoEO");
-        }
-        return mDefinitionObject;
     }
 
     /**
