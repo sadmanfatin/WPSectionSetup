@@ -30,7 +30,8 @@
                                     inlineStyle="height:300px; width:791px;">
                   <f:facet name="toolbar">
                     <af:toolbar id="t1">
-                      <af:commandButton text="Populate " id="cb1">
+                      <af:commandButton text="Populate " id="cb1"
+                                        visible="#{sessionScope.orgId == '343' }">
                         <af:showPopupBehavior popupId="::p1"/>
                       </af:commandButton>
                       <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
@@ -140,7 +141,8 @@
                     </af:column>
                     <af:column sortProperty="Serial" sortable="true"
                                headerText="#{bindings.WpSectionInfoVO1.hints.Serial.label}"
-                               id="c2" align="center">
+                               id="c2" align="center"
+                               visible="#{sessionScope.orgId == '343' }">
                       <af:inputText value="#{row.bindings.Serial.inputValue}"
                                     label="#{bindings.WpSectionInfoVO1.hints.Serial.label}"
                                     required="#{bindings.WpSectionInfoVO1.hints.Serial.mandatory}"

@@ -4,3 +4,5 @@
 *.jdb
 *.ear
 *.war
+*.jdb
+*.cdi_javac
