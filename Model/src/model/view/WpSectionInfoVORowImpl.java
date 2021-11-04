@@ -3,6 +3,7 @@ package model.view;
 import model.entity.WpSectionInfoEOImpl;
 
 import oracle.jbo.RowIterator;
+import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.AttributeDefImpl;
@@ -147,6 +148,16 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        SectionTypeLOV1 {
+            public Object get(WpSectionInfoVORowImpl obj) {
+                return obj.getSectionTypeLOV1();
+            }
+
+            public void put(WpSectionInfoVORowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static int firstIndex = 0;
@@ -189,6 +200,7 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
     public static final int WPSECTIONID = AttributesEnum.WpSectionId.index();
     public static final int SECTIONTYPE = AttributesEnum.SectionType.index();
     public static final int WPPROCESSINFOVO = AttributesEnum.WpProcessInfoVO.index();
+    public static final int SECTIONTYPELOV1 = AttributesEnum.SectionTypeLOV1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -380,17 +392,18 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
         setAttributeInternal(WPSECTIONID, value);
     }
 
+
     /**
-     * Gets the attribute value for the calculated attribute SectionType.
-     * @return the SectionType
+     * Gets the attribute value for SECTION_TYPE using the alias name SectionType.
+     * @return the SECTION_TYPE
      */
     public String getSectionType() {
         return (String) getAttributeInternal(SECTIONTYPE);
     }
 
     /**
-     * Sets <code>value</code> as the attribute value for the calculated attribute SectionType.
-     * @param value value to set the  SectionType
+     * Sets <code>value</code> as attribute value for SECTION_TYPE using the alias name SectionType.
+     * @param value value to set the SECTION_TYPE
      */
     public void setSectionType(String value) {
         setAttributeInternal(SECTIONTYPE, value);
@@ -401,6 +414,13 @@ public class WpSectionInfoVORowImpl extends ViewRowImpl {
      */
     public RowIterator getWpProcessInfoVO() {
         return (RowIterator)getAttributeInternal(WPPROCESSINFOVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> SectionTypeLOV1.
+     */
+    public RowSet getSectionTypeLOV1() {
+        return (RowSet)getAttributeInternal(SECTIONTYPELOV1);
     }
 
     /**

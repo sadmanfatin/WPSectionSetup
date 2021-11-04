@@ -23,6 +23,25 @@
     Type="java.lang.String">
     <TransientExpression><![CDATA[adf.context.sessionScope.orgId]]></TransientExpression>
   </Variable>
+  <ViewAccessor
+    Name="SectionTypeLOV1"
+    ViewObjectName="model.view.SectionTypeLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SectionType"
+    ListVOName="SectionTypeLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SectionType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SectionType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <SQLQuery>
     <![CDATA[SELECT WpSectionInfoEO.UNIT_SECTION_ID, 
        WpSectionInfoEO.SECTION_NAME, 
@@ -121,18 +140,17 @@ WHERE WpSectionInfoEO.ORG_ID = :p_org_id]]>
     AliasName="WP_SECTION_ID"/>
   <ViewAttribute
     Name="SectionType"
-    IsUpdateable="false"
-    IsPersistent="false"
     PrecisionRule="true"
-    Precision="30"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
+    EntityAttrName="SectionType"
+    EntityUsage="WpSectionInfoEO"
     AliasName="SECTION_TYPE"
-    Expression="SECTION_TYPE"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="30"/>
-    </DesignTime>
+    LOVName="LOV_SectionType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewLinkAccessor
     Name="WpProcessInfoVO"
